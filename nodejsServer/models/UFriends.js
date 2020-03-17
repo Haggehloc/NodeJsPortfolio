@@ -1,0 +1,34 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+// Create Schema
+const UFriendSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
+  },
+
+  handle: {
+    type: String,
+    required: true
+  },
+
+  game: {
+    type: String
+  },
+
+  guild: {
+    type: String
+  },
+
+  server: {
+    type: String
+  },
+
+  date: {
+    type: Date,
+    default: Date.now()
+  }
+});
+
+module.exports = UFriends = mongoose.model("ufriends", UFriendSchema);
